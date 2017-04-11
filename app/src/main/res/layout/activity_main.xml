@@ -7,7 +7,7 @@
     tools:context="com.example.music.feel_the_beat.MainActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/timeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time signiture"
@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteX="174dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/bottomTextView"
         android:layout_width="75dp"
         android:layout_height="39dp"
         android:text="4"
@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteY="349dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/topTextView"
         android:layout_width="75dp"
         android:layout_height="39dp"
         android:text="3"
@@ -43,7 +43,7 @@
         tools:layout_editor_absoluteY="293dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/bottomLessButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
@@ -52,7 +52,7 @@
         tools:layout_editor_absoluteY="348dp" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/topLessButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
@@ -61,7 +61,7 @@
         tools:layout_editor_absoluteY="285dp" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/bottomMoreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
@@ -70,7 +70,7 @@
         tools:layout_editor_absoluteY="348dp" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/topMoreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
@@ -79,7 +79,7 @@
         tools:layout_editor_absoluteY="285dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/bpmLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Beats per minute"
@@ -88,7 +88,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/bpmTextView"
         android:layout_width="75dp"
         android:layout_height="39dp"
         android:text="120"
@@ -98,7 +98,7 @@
         tools:layout_editor_absoluteY="72dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bpmLessButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
@@ -107,7 +107,7 @@
         tools:layout_editor_absoluteY="72dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bpmMoreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
@@ -116,7 +116,7 @@
         tools:layout_editor_absoluteY="72dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/bpmEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoText="false"
@@ -128,7 +128,7 @@
         tools:layout_editor_absoluteY="127dp" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/startStopButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start/Stop"
