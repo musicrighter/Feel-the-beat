@@ -62,20 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Get instance of Vibrator from current Context
         Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-        // Start immediately
-        // Vibrate for 200 milliseconds
-        // Sleep for 0 milliseconds
-        pattern = new long[]{0, 200, 1000};
-
         switch (view.getId()) {
             case R.id.bpmLessButton:
                 tempo--;
-                pattern[2] = 60/tempo*1000-200;
                 bpmEditText.setText(String.valueOf(tempo));
                 break;
             case R.id.bpmMoreButton:
                 tempo++;
-                pattern[2] = 60/tempo*1000-200;
                 bpmEditText.setText(String.valueOf(tempo));
                 break;
             case R.id.topLessButton:
@@ -110,6 +103,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mVibrator.cancel();
                 }
                 else {
+                    // Start immediately
+                    // Vibrate for 200 milliseconds
+                    // Sleep for 0 milliseconds
+                    long time = (long) (((60.0/tempo)*1000)-100);
+                    pattern = new long[]{0, 100, time};
                     mVibrator.vibrate(pattern, 0);
                 }
 
