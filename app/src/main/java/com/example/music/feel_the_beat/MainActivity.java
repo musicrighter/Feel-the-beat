@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static android.os.SystemClock.elapsedRealtime;
+import static java.lang.Math.toIntExact;
+
+@SuppressWarnings("Since15")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //declare variables
@@ -16,7 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView bottomTextView;
     private EditText bpmEditText;
 
-    private int count;
+    private int count, tempoTap;
+    private long first, second, third, fourth;
     private long[] pattern;
 
     @Override
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button bottomLessButton = (Button) findViewById(R.id.bottomLessButton);
         Button bottomMoreButton = (Button) findViewById(R.id.bottomMoreButton);
         Button startStopButton = (Button) findViewById(R.id.startStopButton);
+        Button tempoButton = (Button) findViewById(R.id.tempoButton);
 
         bpmLessButton.setOnClickListener(this);
         bpmMoreButton.setOnClickListener(this);
@@ -44,8 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomLessButton.setOnClickListener(this);
         bottomMoreButton.setOnClickListener(this);
         startStopButton.setOnClickListener(this);
+        tempoButton.setOnClickListener(this);
 
-        count = 0;
+        count = tempoTap = 0;
+        first = second = third = fourth = 0;
     }
 
     @Override
@@ -94,6 +102,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     bottom = bottom * 2;
                 }
                 bottomTextView.setText(String.valueOf(bottom));
+                break;
+            case R.id.tempoButton:
+                switch (tempoTap) {
+                    case 0:
+                        first = elapsedRealtime();
+                        tempoTap++;
+                        break;
+                    case 1:
+                        second = elapsedRealtime() - first;
+                        tempoTap++;
+                        break;
+                    case 2:
+                        third = elapsedRealtime() - (second + first);
+                        tempoTap++;
+                        break;
+                    case 3:
+                        fourth = elapsedRealtime() - (third + second + first);
+                        tempoTap = 0;
+
+                        tempo = (int) (60.0 / ((second + third + fourth) / 3000.0));
+                        bpmEditText.setText(String.valueOf(tempo));
+                        break;
+                }
                 break;
             case R.id.startStopButton:
                 count++;
