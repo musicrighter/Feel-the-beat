@@ -1,6 +1,7 @@
 package com.example.music.feel_the_beat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import static android.os.SystemClock.elapsedRealtime;
-import static java.lang.Math.toIntExact;
 
 @SuppressWarnings("Since15")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button bottomMoreButton = (Button) findViewById(R.id.bottomMoreButton);
         Button startStopButton = (Button) findViewById(R.id.startStopButton);
         Button tempoButton = (Button) findViewById(R.id.tempoButton);
+        Button setlistButton = (Button) findViewById(R.id.setlistButton);
 
         bpmLessButton.setOnClickListener(this);
         bpmMoreButton.setOnClickListener(this);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomMoreButton.setOnClickListener(this);
         startStopButton.setOnClickListener(this);
         tempoButton.setOnClickListener(this);
+        setlistButton.setOnClickListener(this);
 
         count = tempoTap = 0;
         first = second = third = fourth = 0;
@@ -102,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     bottom = bottom * 2;
                 }
                 bottomTextView.setText(String.valueOf(bottom));
+                break;
+            case R.id.setlistButton:
+                startActivity(new Intent(MainActivity.this, SetListActivity.class));
                 break;
             case R.id.tempoButton:
                 switch (tempoTap) {
