@@ -143,7 +143,7 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintHorizontal_bias="0.505"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomMoreButton"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLessButton"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -254,6 +254,23 @@
         app:layout_constraintBottom_toTopOf="@+id/startStopButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/bottomTextView"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <Button
+        android:id="@+id/setlistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Setlist"
+        app:layout_constraintBottom_toBottomOf="@+id/tempoButton"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintLeft_toRightOf="@+id/tempoButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomLessButton"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
